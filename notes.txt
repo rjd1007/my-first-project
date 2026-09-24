@@ -1,3 +1,15 @@
-rick@SecondBrain:~/ai/llama.cpp$ ./build/bin/llama-server -m ~/models/Qwen3-14B-Q4_K_M.gguf --jinja --host 0.0.0.0 --port 8080 -ngl 99 -c 16384
+rick@SecondBrain:~$ grep LLAMA ~/.bashrc
+export LLAMA_API_KEY=""
+rick@SecondBrain:~/ai/llama.cpp$ ./build/bin/llama-server -m ~/models/Qwen3-14B-Q4_K_M.gguf --jinja --host 127.0.0.1 --port 8080 -ngl 99 -c 16384
+
 rick@SecondBrain:~/ai/codacus/understory$ docker compose up -d
+
 nvidia-smi --query-gpu=memory.used,memory.total --format=csv
+
+pythonimport openai
+
+client = openai.OpenAI(
+    base_url="http://127.0.0.1:8080/v1",
+    api_key="your-generated-key-here" # see ~/.bashrc
+)
+
