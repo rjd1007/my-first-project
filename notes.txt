@@ -1,0 +1,3 @@
+rick@SecondBrain:~/ai/llama.cpp$ ./build/bin/llama-server -m ~/models/Qwen3-14B-Q4_K_M.gguf --jinja --host 0.0.0.0 --port 8080 -ngl 99 -c 16384
+rick@SecondBrain:~/ai/codacus/understory$ docker compose up -d
+nvidia-smi --query-gpu=memory.used,memory.total --format=csv
